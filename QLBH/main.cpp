@@ -10,13 +10,8 @@ int y=0;
 int z=0; 
 void SETWHILE(){
 	SetColor(15, 0);
-//	for(int i=0; i<=30 ; i++){
-//			cout<<"                                                                                     ";
-//	} 
-	for(int i=0; i<100; i++){
-		for(int j=0; j<30; j++){
-			cout<<" "; 
-		} 
+	for(int i=0; i<=45 ; i++){
+			cout<<"                                                                                     ";
 	} 
 }
 void Chay(){
@@ -28,7 +23,7 @@ void Chay(){
 	hd.NhapFHis();
 	vector<TTHangHoa> dsttp=dstt;
 	ShowCur(false); 
-	SetWindowSize(100, 21);
+	//SetWindowSize(100, 21);
 	DisableResizeWindow();
 	SETWHILE();
 	SetColor(15, 0);

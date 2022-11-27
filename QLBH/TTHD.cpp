@@ -1,5 +1,5 @@
 #include"TTHD.h"
-void HoaDon::NhapFHis(){
+void HoaDon::NhapFHis(){// nhap thong tin tu file ttls cho lich su   
 	ifstream rFile("ttls.txt");
 	while(rFile.eof()==false){
 		string SDT, TEN, TENHANG, TIME;
@@ -14,7 +14,7 @@ void HoaDon::NhapFHis(){
 	}
 	rFile.close();
 }
-void HoaDon::XuatFHis(){
+void HoaDon::XuatFHis(){// xuat thong tin lich su ra file ttls  
 	ofstream wFile("ttls.txt");
 	for(int i=0; i<dsls.size(); i++){
 		wFile<<dsls[i].getsdt()<<",";

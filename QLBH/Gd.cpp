@@ -1,5 +1,5 @@
 #include"Gd.h"
-void dltttline(int i){
+void dltttline(int i){ // xóa 1 dòng thông tin trên danh sách thu i  
 	int a=10; int b=2;
 	gotoxy(a, b+2*i); cout<<"  ";
 	gotoxy(a+3, b+2*i); cout<<"     "; 
@@ -9,7 +9,7 @@ void dltttline(int i){
 	gotoxy(a+45, b+2*i); cout<<"   ";
 	 
 }
-void prbut(int a, int b, int d){
+void prbut(int a, int b, int d){ // in môt ô nút  
 	SetColor(15, 0); 
 	for(int i=a-d; i<=a+d; i++){
 		for(int j=j=b-1; j<=b+1; j+=2){
@@ -20,7 +20,7 @@ void prbut(int a, int b, int d){
 	gotoxy(a-d, b); printf("%c", 179); gotoxy(a+d, b); printf("%c", 179);
 	gotoxy(a-d, b+1); printf("%c", 192); gotoxy(a+d, b+1); printf("%c", 217);
 }
-void PrOpMenu(int a, int b, int c){
+void PrOpMenu(int a, int b, int c){ //in màn hình bát dàu  
 	if(c==1) {
 		SetColor(9, 0);
 		gotoxy(a-3, b); cout<<"BAT DAU";
@@ -40,7 +40,7 @@ void PrOpMenu(int a, int b, int c){
 	prbut(a, b, 5); 
 } 
 //***************************************************************
-void PrSubBut(int c){
+void PrSubBut(int c){ // in nút phu : sua va xoa 
 	int a=10; int b=20;
 	if(c==5){	SetColor(9, 0);
 				gotoxy(a-1, b); cout<<"SUA";
@@ -57,7 +57,7 @@ void PrSubBut(int c){
 	} 
 	prbut(a, b, 2); 
 } 
-void PrMainBut(int c){
+void PrMainBut(int c){ //in nut chính  
 	int a=4; int b=4; 
 	if(c==1) {	SetColor(9, 0);
 				gotoxy(a-2, b); cout<<"THEM";
@@ -91,7 +91,7 @@ void PrMainBut(int c){
 	} 
 	prbut(a, b, 4); b+=3;
 }
-void PrNextPre(int c, int d){
+void PrNextPre(int c, int d){ // in nút tien va lùi < > 
 	int a=30; int b=17;
 	if(c==10){	SetColor(9, 0);
 				gotoxy(a, b); cout<<"<";
@@ -110,7 +110,7 @@ void PrNextPre(int c, int d){
 	} 
 	prbut(a, b, 1);
 } 
-void PrSortBut(int c){
+void PrSortBut(int c){ // in nút sáp xép  
 	int a=2; int b=17;
 	if(c==8){	SetColor(9, 0);
 				gotoxy(a, b); cout<<(char)24;
@@ -127,7 +127,7 @@ void PrSortBut(int c){
 	} 
 	prbut(a, b, 1);
 } 
-void PrOrder(int c){
+void PrOrder(int c){ // in nút tao don  
 	int a=83; int b=2;
 	if(c==7){	SetColor(9, 0);
 				gotoxy(a-3, b); cout<<"TAO DON";
@@ -138,7 +138,7 @@ void PrOrder(int c){
 	prbut(a, b, 4);
 } 
 //***************************************************************
-void PrListBut(int a, int b){
+void PrListBut(int a, int b){ // in khung danh sách  
 	a--;
 	for(int i=a; i<=a+49; i++){
 		for(int j=b; j<=b+14; j+=2){
@@ -180,7 +180,7 @@ void PrListBut(int a, int b){
 	gotoxy(a+49, b); printf("%c", 191); 
 	gotoxy(a+49, b+14); printf("%c", 217); 
 } 
-void PrList(vector<TTHangHoa> l, int d){
+void PrList(vector<TTHangHoa> l, int d){// in danh sách thông tin 
 	int a=10; int b=2;
 	gotoxy(a+3 , b); cout<<"Loai";
 	gotoxy(a+8, b); cout<<"Ten Mat Hang";
@@ -199,27 +199,27 @@ void PrList(vector<TTHangHoa> l, int d){
 		if(i+1==l.size()) break; 
 	}
 } 
-void DltPrList(int a, int b){
+void DltPrList(int a, int b){ // xóa danh sách thông tin 
 	for(int i=b; i<=15; i++){
 			gotoxy(a, i); cout<<"                                                  ";  
 	} 
 }  
 //***************************************************************
-void Pr( int c, int d){
+void Pr( int c, int d){ // in màn hình gòm các hàm trên  
 		PrMainBut(c); 
 		PrNextPre(c, d); 
 	PrSubBut(c);
 	PrSortBut(c);
 	PrOrder(c);
 } 
-void PrTT(vector<TTHangHoa> l, int d){
+void PrTT(vector<TTHangHoa> l, int d){ // in thông tin ra màn hình gòm các hàm in trên  
 	int a=4; int b=4;
 	DltPrList(a+6, b-3);
 	PrListBut(a+6, b-3); 
 	PrList(l, d); 
 } 
 //***************************************************************
-void PrSubTTBut(int c){
+void PrSubTTBut(int c){ // in các nút lua chon khi vua thao tác NHAP và TIM  
 	int a=70; int b=19;
 	if(c==1){	SetColor(9, 0);
 				gotoxy(a-1, b); cout<<"TIEP";
@@ -236,20 +236,20 @@ void PrSubTTBut(int c){
 	} 
 	prbut(a, b, 4); 
 }
-void dltSubTT(){
+void dltSubTT(){ //xóa màn hình khu vuc bên phai cua danh sách  
 	int a=65; int b=1;
 	for(int i=b; i<=b+6; i++){
 		gotoxy(a, i); cout<<"                                    ";
 	}
 }
-void dltPrSubTTBut(){
+void dltPrSubTTBut(){// xóa màn hình  
 	int a=70; int b=19;
 	for(int i=b-1; i<=b+1; i++){
 		gotoxy(a-4, i);
 		cout<<"                                   ";
 	}
 }
-void SubRun(TTHangHoa hh, int e){
+void SubRun(TTHangHoa hh, int e){ // chay khi TIM hay NHAP xong  
 	int a=70; int b=20; int z=1; int d=1;
 	PrSubTTBut(z);
 		bool tab=true;
@@ -272,7 +272,7 @@ void SubRun(TTHangHoa hh, int e){
 		}	
 }
 //***************************************************
-void PrOrderBut(int c){
+void PrOrderBut(int c){ // in các nút TIEP và XAC NHAN khi tao don 
 	int a=70; int b=19;
 	if(c==1){	SetColor(9, 0);
 				gotoxy(a-2, b); cout<<"TIEP";
@@ -289,7 +289,7 @@ void PrOrderBut(int c){
 	} 
 	prbut(a, b, 5); 
 }
-void PrConfirmBut(int c){
+void PrConfirmBut(int c){ //in các nút HUY BO và XAC NHAN don hàng  
 	int a=90; int b=5;
 	if(c==1){	SetColor(9, 0);
 				gotoxy(a-3, b); cout<<"HUY BO";
@@ -306,13 +306,13 @@ void PrConfirmBut(int c){
 	} 
 	prbut(a, b, 5); 
 }
-void dltOrderRun(){
+void dltOrderRun(){ // xáo màn hình don hang  
 	for(int i=4; i<=21; i++){
 		gotoxy(60, i);
 		cout<<"                                        ";
 	}
 }
-void OrderRun(){
+void OrderRun(){ //chay chuong trình tao don hàng 
 	vector<int> a; int z=1;
 	bool run=true;
 	while(run){
@@ -346,7 +346,7 @@ void OrderRun(){
 		}
 		
 	} 
-void PrOrderTable(){
+void PrOrderTable(){ //in khung chua thông tin don hàng  
 	int a=25; int b=2;
 	gotoxy(a-1, b);			cout<<(char)218;
 	gotoxy(a-1, b+18);		cout<<(char)192;
@@ -367,7 +367,7 @@ void PrOrderTable(){
 	gotoxy(a+50+1, b+2);	cout<<(char)180;
 	gotoxy(a+50+1, b+18-2);	cout<<(char)180;
 }
-void PrOrderTT(vector<int> x, long &tong){
+void PrOrderTT(vector<int> x, long &tong){ // in thông tin don hàng  
 	int a=25; int b=3;  tong=0;
 		gotoxy(a, b); cout<<"Ten Hang";
 		gotoxy(a+30, b); cout<<"Size";
@@ -386,7 +386,7 @@ void PrOrderTT(vector<int> x, long &tong){
 	gotoxy(a+10, 19); cout<<tong;
 	getch();
 }
-void ViewOrder(vector<int> x){
+void ViewOrder(vector<int> x){  //chay chuong trinh in hóa don  
 	system("cls");
 	long tong;
 	PrOrderTable();
@@ -428,7 +428,7 @@ void ViewOrder(vector<int> x){
 		}
 	}
 }
-void UPDATEDATA(vector<int> x, string name, string number, long tong){
+void UPDATEDATA(vector<int> x, string name, string number, long tong){// cap nhat lai thông tin cua chuong trình  
 	time_t now=time(0);
 	char* dt=ctime(&now);
 	string t=dt; 
@@ -451,7 +451,7 @@ void UPDATEDATA(vector<int> x, string name, string number, long tong){
 	
 }
 //*********************************************************************************************
-void PrHisListBut(){
+void PrHisListBut(){//in khung danh sách lich su mua hàng  
 	int a=0, b=1;
 	for(int i=a; i<=a+100; i++){
 		for(int j=b; j<=b+14; j+=2){
@@ -488,7 +488,7 @@ void PrHisListBut(){
 	gotoxy(a+100, b+14); printf("%c", 217); 
 } 
 
-void PrHisTT(int d){
+void PrHisTT(int d){ //in thông tin lich su mua hàng  
 	int a=1; int b=2;
 	gotoxy(a+4, b); cout<<"SDT";
 	gotoxy(a+22, b); cout<<"Ten KH";
@@ -506,7 +506,7 @@ void PrHisTT(int d){
 		if(i+1==dsls.size()) break; 
 	}
 }
-void PrHis(){
+void PrHis(){// chay chuong trình xem lich su mua hàng  
 	int d=1;
 	PrHisListBut();
 	PrHisTT(d);
@@ -539,7 +539,7 @@ void PrHis(){
 		}
 	}
 }
-void HisBack(int c){
+void HisBack(int c){// tao nút tro ve cua chuc nang xem lich su  
 	int a=50; int b=17;
 	if(c==12){	SetColor(9, 0);
 				gotoxy(a-3, b); cout<<"TRO VE";

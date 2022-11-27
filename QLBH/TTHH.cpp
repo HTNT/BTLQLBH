@@ -1,5 +1,5 @@
 #include"TTHH.h"
-void TTHangHoa::NhapF(){
+void TTHangHoa::NhapF(){// nhap thong tin doi tuong duoc luu tu file tthh  
 	ifstream rFile("tthh.txt");
 	while(rFile.eof()==false){
 		TTHangHoa y;
@@ -26,7 +26,7 @@ void TTHangHoa::XuatTT(){
 	}
 }
 
-void TTHangHoa::XuatF(){ 
+void TTHangHoa::XuatF(){ // xuat thong tin doi tuong ra file  
 	ofstream wFile("tthh.txt");
 	for(int i=0; i<dstt.size(); i++){
 		wFile<<dstt[i].LoaiHang<<",";
@@ -40,7 +40,7 @@ void TTHangHoa::XuatF(){
 	}
 	wFile.close();
 }
-void TTHangHoa::TimTT(vector<TTHangHoa> &check){
+void TTHangHoa::TimTT(vector<TTHangHoa> &check){// tim thong tin cua doi tuong  
 	TTHangHoa find;
 	ShowCur(true); 
 	int a=70; int b=1; 
@@ -65,7 +65,7 @@ void TTHangHoa::TimTT(vector<TTHangHoa> &check){
 		}
 	}	
 }
-void TTHangHoa::SuaTT(int i){
+void TTHangHoa::SuaTT(int i){// sua thong tin cua doi tuong  
 	ShowCur(true);
 	i--;
 	TTHangHoa t;
@@ -84,7 +84,7 @@ void TTHangHoa::SuaTT(int i){
 	if(t.Soluong!=0) dstt[i].setSoluong(t.Soluong);
 }
 
-void TTHangHoa::ThemTT(){
+void TTHangHoa::ThemTT(){// them 1 doi tuong  
 	ShowCur(true);
 	TTHangHoa t; 
 	int a=70; int b=1;
