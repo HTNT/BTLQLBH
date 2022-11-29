@@ -44,10 +44,10 @@ void TTHangHoa::TimTT(vector<TTHangHoa> &check){// tim thong tin cua doi tuong
 	TTHangHoa find;
 	ShowCur(true); 
 	int a=70; int b=1; 
-	gotoxy(a, b); cout<<"NHAP 0 NEU KHONG TIM MUC NAY"<<endl; b+=1; 
-	gotoxy(a, b); cout<<"Loai Hang: "; getline(cin, find.LoaiHang); b+=1; 
-	gotoxy(a, b); cout<<"Ten Hang: "; getline(cin, find.TenHang); b+=1; 
-	gotoxy(a, b); cout<<"Size: "; getline(cin, find.Size); b+=1; 
+	gotoxy(a, b); cout<<"NHAP 0 NEU KHONG TIM MUC NAY"<<endl; 				b+=1; 
+	gotoxy(a, b); cout<<"Loai Hang: "; getline(cin, find.LoaiHang); 		b+=1; 
+	gotoxy(a, b); cout<<"Ten Hang: "; getline(cin, find.TenHang); 			b+=1; 
+	gotoxy(a, b); cout<<"Size: "; getline(cin, find.Size); 					b+=1; 
 	gotoxy(a, b); cout<<"Gia: "; cin>>find.Gia;
 	
 	for(int i=0; i<dstt.size(); i++){
@@ -86,14 +86,54 @@ void TTHangHoa::SuaTT(int i){// sua thong tin cua doi tuong
 
 void TTHangHoa::ThemTT(){// them 1 doi tuong  
 	ShowCur(true);
-	TTHangHoa t; 
-	int a=70; int b=1;
-	gotoxy(a, b); cout<<"NHAP THONG TIN: "; b++;
-	gotoxy(a, b); cout<<"Nhap Loai hang: "; fflush(stdin); getline(cin, t.LoaiHang);  b++;
-	gotoxy(a, b); cout<<"Nhap Ten hang: "; getline(cin, t.TenHang); b++;
-	gotoxy(a, b); cout<<"Nhap size: "; getline(cin, t.Size); b++;
-	gotoxy(a, b); cout<<"Nhap Gia: "; cin>>t.Gia; b++;
-	gotoxy(a, b); cout<<"Nhap So luong: "; cin>>t.Soluong; 
-	dstt.push_back(t);
+						TTHangHoa t; 
+		int a=70; int b=1;
+		gotoxy(a, b); 		cout<<"NHAP THONG TIN: "; 														b++;
+		gotoxy(a, b); 		cout<<"Nhap Loai hang: "; fflush(stdin); getline(cin, t.LoaiHang);  			b++;
+		gotoxy(a, b); 		cout<<"Nhap Ten hang: "; getline(cin, t.TenHang); 								b++;
+		gotoxy(a, b); 		cout<<"Size: S-M-L-XL-XXL-3XL"; 												b++;
+		do{
+			gotoxy(a, b); 		cout<<"                            ";
+			gotoxy(a, b); 		cout<<"Nhap size: "; getline(cin, t.Size);
+		}while(Checksize(t.Size)==false);			b++;
+		do{
+			gotoxy(a, b); 		cout<<"                            ";
+			gotoxy(a, b); 		cout<<"Nhap Gia: "; cin>>t.Gia; 												
+		}while(t.Gia<=0);		b++;
+		do{
+			gotoxy(a, b); 		cout<<"                            ";
+			gotoxy(a, b); 		cout<<"Nhap So luong: "; cin>>t.Soluong; 
+		}while(t.Soluong<=0);
+	int cnt=0;
+	for(int i=0; i<dstt.size(); i++){
+		if(Sosanh(t, dstt[i])){
+			dstt[i].setSoluong(dstt[i].getSoluong()+t.Soluong);
+			cnt++;
+			break;
+		}		
+}
+	if(cnt==0) dstt.push_back(t);
 	ShowCur(false);
 }
+//bool Sosanh(TTHangHoa x, TTHangHoa y){
+//	if(x.getLoai)
+//}
+bool TTHangHoa::Checksize(string x){
+	string chz[6]={"S", "M", "L", "XL", "2XL", "3XL"};
+	for(int i=0; i<5; i++){
+		if(x==chz[i]) return true;
+	}
+	return false;
+}
+bool TTHangHoa::Sosanh(TTHangHoa x, TTHangHoa y){
+	if(x.getLoaiHang()==y.getLoaiHang()&&x.getTenHang()==y.getTenHang()&&x.getGia()==y.getGia()&&x.getSize()==y.getSize()) return true;
+	else return false;
+}
+//void Upstr(string &x){
+//	for(int i=0; i<x.size(); i++){
+//		int y=x[i];
+//		if(y>=97&&y<=122){
+//			x[i]=(char)(y-32);
+//		}
+//	}
+//}

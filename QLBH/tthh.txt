@@ -1,14 +1,14 @@
-Ao,Ao khoac du,xl,230000,0
-Ao,So mi trang,l,240000,0
-Quan,Quan tay den,x,329000,0
-Quan,Quan dui ngan,s,20000,0
-Mu,Mu luoi trai,m,35000,11
-Ao,Ao thun,m,20000,18
-Quan,Quan the thao,xl,30000,30
-Quan,Quan chay bo,x,22000,49
-Ao,Ao the thao,xl,25000,30
-Ao,Ao Sida,Xl,1000,10
-Ao,Ao da quang,xl,25000,30
-Ao,Ao dung cu,xl,25000,30
-Ao,Ao,xx,22222,12
-Ao,Ao khoac da,xll,32123,12
+Ao,Ao khoac du,XL,230000,10
+Ao,So mi trang,L,240000,10
+Quan,Quan tay den,X,329000,10
+Quan,Quan dui ngan,S,20000,10
+Mu,Mu luoi trai,M,35000,11
+Ao,Ao thun,M,20000,18
+Quan,Quan the thao,XL,30000,30
+Quan,Quan chay bo,S,22000,49
+Ao,Ao the thao,XL,25000,30
+Ao,Ao Sida,XL,1000,10
+Ao,Ao da quang,XL,25000,30
+Ao,Ao dung cu,XL,25000,30
+Ao,Ao,X,22222,12
+Ao,Ao khoac da,XL,32123,12

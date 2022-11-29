@@ -10,7 +10,7 @@ int y=0;
 int z=0; 
 void SETWHILE(){
 	SetColor(15, 0);
-	for(int i=0; i<=45 ; i++){
+	for(int i=0; i<=45; i++){
 			cout<<"                                                                                     ";
 	} 
 }
@@ -23,11 +23,10 @@ void Chay(){
 	hd.NhapFHis();
 	vector<TTHangHoa> dsttp=dstt;
 	ShowCur(false); 
-	//SetWindowSize(100, 21);
+	SetWindowSize(100, 21);
 	DisableResizeWindow();
 	SETWHILE();
 	SetColor(15, 0);
-	//PrOpMenu(50, 10, 1);
 	bool tab;
 	int chose=1; 
 	bool Run= true; 
@@ -111,8 +110,8 @@ void Chay(){
 //5 sua 6 xoa 1 them 2 tim 3 ls 4 thoat 10 11 <> 8 9 sort 7 order 12 
 						case 13: vector<TTHangHoa> chk; 
 							switch(z){
-								case 1: dltSubTT(); fflush(stdin); hanghoa.ThemTT(); 	SubRun(hanghoa, z); break;
-								case 2:	dltSubTT(); fflush(stdin); hanghoa.TimTT(chk); PrTT(chk, d); SubRun(hanghoa, z); break; 
+								case 1: dltSubTT(); fflush(stdin); hanghoa.ThemTT(); PrTT(dstt, d); ShowCur(false); SubRun(hanghoa, z); break;
+								case 2:	dltSubTT(); fflush(stdin); hanghoa.TimTT(chk); PrTT(chk, d); ShowCur(false); SubRun(hanghoa, z); break; 
 								case 3: system("cls"); PrHis(); tab=false; break; 
 								case 4: chose=1; tab=false; system("CLS"); break;
 								case 5: dltSubTT(); gotoxy(15, 20); int q;

@@ -1,6 +1,5 @@
 #pragma once
 #include"head.h"
-
 class TTHangHoa{
 	private:
 		string LoaiHang; 
@@ -59,5 +58,8 @@ class TTHangHoa{
 		void ThemTT();
 		void XoaTT(int i);
 		void SuaTT(int i);
+		void Upstr(string x);
+		bool Checksize(string x);
+		bool Sosanh(TTHangHoa x, TTHangHoa y);
 }; 
 vector<TTHangHoa> dstt;
